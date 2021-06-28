@@ -1,5 +1,6 @@
 import axios from 'axios';
 
+
 export const LOADING = 'LOADING';
 export const ERROR = 'ERROR';
 export const SUCCESS = 'SUCCESS';
@@ -11,7 +12,7 @@ export const fetchSmurfs = () => (dispatch) =>{
         console.log(res);
     })
     .catch( err => {
-        dispatch({type: ERROR, payload: {err}});
+        dispatch({type: ERROR, payload: err });
     });
 }
 //Task List:

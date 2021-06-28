@@ -17,7 +17,7 @@ class App extends Component {
   render(props) {
     useEffect(() => {
       fetchSmurfs();
-    }, []);
+  }, {});
 
     return (
       <div className="App">
@@ -32,7 +32,13 @@ class App extends Component {
   }
 }
 
-export default connect() (App);
+const mapStateToProps = (state) => {
+  return{
+    state: state,
+  }
+}
+
+export default connect(mapStateToProps, {fetchSmurfs}) (App);
 
 //Task List:
 //1. Connect the fetchSmurfs actions to the App component.
